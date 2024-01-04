@@ -1,5 +1,7 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import Connection from './database/db.js';
+import DefaultData from './defaultData.js';
 
 const app = express();
 
@@ -12,6 +14,8 @@ app.get('/', (req, res)=>{
 // db connection
 Connection();
 
+
 app.listen(PORT, ()=>{
     console.log(`Server Started successfully on port ${PORT}`);
 })
+DefaultData();
